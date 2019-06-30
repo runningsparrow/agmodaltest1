@@ -1,0 +1,32 @@
+<div ng-controller='Directivecontroller'>
+    <!--增加指令标签-->
+    <testdirective testdirective-title='title'>
+        {{text}}
+    </testdirective>
+
+    <accordion>
+        <expander class="expander"
+                  ng-repeat="expander in expanders"
+                  expander-title="expander.title">
+            {{expander.text}}
+        </expander>
+    </accordion>
+
+</div>
+<div>
+    <!--为原生标签增加动态属性-->
+    分数:<input type="text" attrsdirective/><br/>
+</div>
+
+
+
+<!--通过控制器控制子元素-->
+<!-- <div ng-controller="SomeController">
+    <accordion>
+        <expander class="expander"
+                  ng-repeat="expander in expanders"
+                  expander-title="expander.title">
+            {{expander.text}}
+        </expander>
+    </accordion>
+</div> -->

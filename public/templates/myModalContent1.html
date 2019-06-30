@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="ui.bootstrap.demo" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <title></title>
+
+    <!-- <script src="../node_modules/jquery/dist/jquery.js"></script> -->
+    <!-- <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script> -->
+    <script src="../libs/angular-1.5.9/angular.js"></script>
+    <script src="../libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+    <script src="../javascripts/myModalContent1.js"></script>
+
+</head>
+<body>
+    <div ng-controller="ModalDemoCtrl">
+        <script type="text/ng-template" id="myModalContent1.html">
+            <div class="modal-header">
+                <h3 class="modal-title">I'm a modal!</h3>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control">
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li ng-repeat="item in items">
+                        <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                    </li>
+                </ul>
+                Selected: <b>{{ selected.item }}</b>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+
+        <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
+        <button type="button" class="btn btn-default" ng-click="open('lg')">Large modal</button>
+        <button type="button" class="btn btn-default" ng-click="open('sm')">Small modal</button>
+        <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+    </div>
+</body>
+</html>
